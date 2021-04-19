@@ -1,0 +1,65 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/type_header">
+
+        <ListPreference
+            app:defaultValue="any"
+            app:entries="@array/type_entries"
+            app:entryValues="@array/type_values"
+            app:key="list_type"
+            app:title="@string/type_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/participants_header">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="switch_participants"
+            android:title="@string/participants_switch_title" />
+        <EditTextPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="1"
+            android:key="edit_text_participants"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="asdf"
+            android:title="@string/participants_title"
+            app:dependency="switch_participants" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/accessibility_header">
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="switch_accessibility"
+            android:title="@string/accessibility_switch_title" />
+        <EditTextPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="1"
+            android:key="edit_text_accessibility"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="asdf"
+            android:title="@string/accessibility_title" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/price_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

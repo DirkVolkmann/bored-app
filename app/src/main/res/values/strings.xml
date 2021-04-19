@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">bored</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="get_activity">bored</string>
+    <string name="get_another_activity">still bored</string>
+
+    <string name="hello_first_fragment">bored?</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="type_header">Type of the activity</string>
+    <string name="participants_header">The number of people that this activity could involve</string>
+    <string name="accessibility_header">A factor describing how possible an event is to do with zero being the most accessible</string>
+    <string name="price_header">A factor describing the cost of the event with zero being free</string>
+
+    <!-- Messages Preferences -->
+    <string name="type_title">Type of the activity</string>
+    <string name="participants_title">How many people should be involved?</string>
+    <string name="participants_switch_title">I don\'t care</string>
+    <string name="accessibility_title">How easy should it be done?</string>
+    <string name="accessibility_switch_title">I don\'t care</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>
