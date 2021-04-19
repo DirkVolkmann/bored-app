@@ -30,4 +30,7 @@
     <string name="price_switch_title">I don\'t care</string>
     <string name="accessibility_title">How easy should it be done?</string>
     <string name="accessibility_switch_title">I don\'t care</string>
+
+    <!-- Error messages -->
+    <string name="request_failed">Failed to load activity</string>
 </resources>
