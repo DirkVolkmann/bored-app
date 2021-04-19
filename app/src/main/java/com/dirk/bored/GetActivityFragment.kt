@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import androidx.preference.PreferenceManager
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
@@ -30,6 +32,27 @@ class GetActivityFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Read from settings
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(activity)
+        val switchTypePref =            sharedPref.getBoolean("switch_type", false)
+        val switchParticipantsPref =    sharedPref.getBoolean("switch_participants", false)
+        val switchPricePref =           sharedPref.getBoolean("switch_price", false)
+        val switchAccessibilityPref =   sharedPref.getBoolean("switch_accessibility", false)
+
+        val typePref = sharedPref.getString("pref_type", getString(string.summary_not_set))
+        val participantsPref = sharedPref.getString("pref_participants", getString(string.summary_not_set))
+        val pricePref = sharedPref.getInt("pref_price", 50)
+        val accessibilityPref = sharedPref.getInt("pref_accessibility", 50)
+
+        Log.d("READ_SETTINGS", "switchTypePref $switchTypePref")
+        Log.d("READ_SETTINGS", "switchParticipantsPref $switchParticipantsPref")
+        Log.d("READ_SETTINGS", "switchPricePref $switchPricePref")
+        Log.d("READ_SETTINGS", "switchAccessibilityPref $switchAccessibilityPref")
+        Log.d("READ_SETTINGS", "typePref " + typePref.toString())
+        Log.d("READ_SETTINGS", "participantsPref $participantsPref")
+        Log.d("READ_SETTINGS", "pricePref $pricePref")
+        Log.d("READ_SETTINGS", "accessibilityPref $accessibilityPref")
 
         // Instantiate view variables
         val button = view.findViewById<Button>(R.id.button_first)

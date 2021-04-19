@@ -3,31 +3,66 @@
 
     <PreferenceCategory app:title="@string/type_header">
 
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="switch_type"
+            android:title="@string/disable_option_title"
+            android:disableDependentsState="true" />
         <ListPreference
-            app:defaultValue="any"
-            app:entries="@array/type_entries"
-            app:entryValues="@array/type_values"
-            app:key="list_type"
-            app:title="@string/type_title"
-            app:useSimpleSummaryProvider="true" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="pref_type"
+            android:title="@string/type_title"
+            android:defaultValue=""
+            android:entries="@array/type_entries"
+            android:entryValues="@array/type_values"
+            app:useSimpleSummaryProvider="true"
+            android:dependency="switch_type" />
 
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/participants_header">
 
         <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:defaultValue="true"
             android:key="switch_participants"
-            android:title="@string/participants_switch_title" />
+            android:title="@string/disable_option_title"
+            android:disableDependentsState="true" />
         <EditTextPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:key="pref_participants"
+            android:title="@string/participants_title"
+            android:summary="@string/summary_not_set"
             android:defaultValue="1"
-            android:key="edit_text_participants"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:summary="asdf"
-            android:title="@string/participants_title"
-            app:dependency="switch_participants" />
+            android:dependency="switch_participants" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/price_header">
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="switch_price"
+            android:title="@string/disable_option_title"
+            android:disableDependentsState="true"/>
+        <SeekBarPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="pref_price"
+            android:title="Set price"
+            android:summary="@string/summary_not_set"
+            android:defaultValue="50"
+            app:showSeekBarValue="true"
+            app:min="0"
+            app:seekBarIncrement="1"
+            android:dependency="switch_price" />
 
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/accessibility_header">
@@ -36,30 +71,19 @@
             android:layout_height="wrap_content"
             android:defaultValue="true"
             android:key="switch_accessibility"
-            android:title="@string/accessibility_switch_title" />
-        <EditTextPreference
+            android:title="@string/disable_option_title"
+            android:disableDependentsState="true"/>
+        <SeekBarPreference
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:defaultValue="1"
-            android:key="edit_text_accessibility"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
-            android:summary="asdf"
-            android:title="@string/accessibility_title" />
-    </PreferenceCategory>
-    <PreferenceCategory app:title="@string/price_header">
-
-        <SwitchPreferenceCompat
-            app:key="sync"
-            app:title="@string/sync_title" />
-
-        <SwitchPreferenceCompat
-            app:dependency="sync"
-            app:key="attachment"
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
-
+            android:key="pref_accessibility"
+            android:title="Set accessibility"
+            android:summary="@string/summary_not_set"
+            android:defaultValue="50"
+            app:showSeekBarValue="true"
+            app:min="0"
+            app:seekBarIncrement="1"
+            android:dependency="switch_accessibility" />
     </PreferenceCategory>
 
 </PreferenceScreen>
