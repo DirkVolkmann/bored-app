@@ -12,6 +12,7 @@
     <string name="activity_empty">bored?</string>
     <string name="get_activity">bored</string>
     <string name="get_another_activity">still bored</string>
+    <string name="button_link_text">Tell me more</string>
 
     <!-- Preference common -->
     <string name="title_activity_settings">boring settings</string>
