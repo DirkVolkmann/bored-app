@@ -1,19 +1,18 @@
 package com.dirk.bored
 
-import android.R.attr
-import android.content.SharedPreferences
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.ArrayMap
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.preference.ListPreference
-import androidx.preference.Preference
 import androidx.preference.PreferenceManager
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
@@ -50,27 +49,18 @@ class GetActivityFragment : Fragment() {
         val prefPriceSwitch =           sharedPrefs.getBoolean("switch_price", false)
         val prefAccessibilitySwitch =   sharedPrefs.getBoolean("switch_accessibility", false)
 
-        // Actual values
-
-
-
-
-
         Log.d("GetActivity", "prefTypeSwitch $prefTypeSwitch")
         Log.d("GetActivity", "prefParticipantsSwitch $prefParticipantsSwitch")
         Log.d("GetActivity", "prefPriceSwitch $prefPriceSwitch")
         Log.d("GetActivity", "prefAccessibilitySwitch $prefAccessibilitySwitch")
-
-
-
-
 
         /**
          * Handle views
          */
 
         // Instantiate view values
-        val button = view.findViewById<Button>(R.id.button_bored)
+        val buttonBored = view.findViewById<Button>(R.id.button_bored)
+        val buttonLink = view.findViewById<Button>(R.id.button_link)
         val textView = view.findViewById<TextView>(R.id.textview_activity)
 
         /**
@@ -168,7 +158,7 @@ class GetActivityFragment : Fragment() {
         val url = "https://www.boredapi.com/api/activity/"
         val tag = "GetActivity"
 
-        button.setOnClickListener {
+        buttonBored.setOnClickListener {
             //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             // Request a string response from the provided URL.
             val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url + paramsString, null,
@@ -181,12 +171,19 @@ class GetActivityFragment : Fragment() {
                         if (response.has("error")) {
                             activityText = response.getString("error")
                         }
+                        // Display activity
                         else if (response.has("activity")) {
-                            button.text = getString(string.get_another_activity)
+                            buttonBored.text = getString(string.get_another_activity)
                             activityText = response.getString("activity")
+
+                            // Activate link button if link is available
                             if (response.has("link") && response.getString("link") != "") {
                                 val link = response.getString("link")
                                 Log.d("GetActivity", "link $link")
+                                buttonLink.contentDescription = link
+                                buttonLink.visibility = VISIBLE
+                            } else {
+                                buttonLink.visibility = GONE
                             }
                         }
                         textView.text = activityText
@@ -202,7 +199,15 @@ class GetActivityFragment : Fragment() {
 
             // Add the request to the RequestQueue.
             queue.add(jsonObjectRequest)
+        }
 
+        buttonLink.setOnClickListener {
+            val link: String = it.contentDescription.toString()
+            if (link != "") {
+                val uriUrl: Uri = Uri.parse(link)
+                val launchBrowser = Intent(Intent.ACTION_VIEW, uriUrl)
+                startActivity(launchBrowser)
+            }
         }
     }
 }
