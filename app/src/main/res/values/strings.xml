@@ -27,6 +27,11 @@
     <!-- Preference Price -->
     <string name="price_header">How much can it cost?</string>
     <string name="price_title">Select maximum</string>
+    <string name="price_summary_highest">Money is not an issue</string>
+    <string name="price_summary_high">As long as it is entertaining</string>
+    <string name="price_summary_middle">I don\'t mind spending a little</string>
+    <string name="price_summary_low">Make it cheap</string>
+    <string name="price_summary_lowest">Free</string>
 
     <!-- Preference Accessibility -->
     <string name="accessibility_header">How easy should it be done?</string>
@@ -36,9 +41,4 @@
     <string name="accessibility_summary_middle">Something in the middle</string>
     <string name="accessibility_summary_low">Feeling lazy</string>
     <string name="accessibility_summary_lowest">I don\'t really want to do anything</string>
-    <string name="price_summary_highest">Money is not an issue</string>
-    <string name="price_summary_high">As long as it is entertaining</string>
-    <string name="price_summary_middle">I don\'t mind spending a little</string>
-    <string name="price_summary_low">Make it cheap</string>
-    <string name="price_summary_lowest">Free</string>
 </resources>
