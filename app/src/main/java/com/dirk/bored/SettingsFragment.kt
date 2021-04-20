@@ -1,8 +1,9 @@
 package com.dirk.bored
 
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.SeekBarPreference
+
 
 class SettingsFragment : PreferenceFragmentCompat() {
 

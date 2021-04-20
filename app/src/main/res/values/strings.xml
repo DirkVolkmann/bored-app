@@ -5,32 +5,40 @@
     <!-- Common strings -->
     <string name="disable_option_title">I don\'t care</string>
     <string name="summary_not_set">Not set</string>
+    <string name="request_failed">Failed to load activity</string>
+    <string name="no_activity">There is not activity for your preferences</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="activity_empty">bored?</string>
     <string name="get_activity">bored</string>
     <string name="get_another_activity">still bored</string>
 
-    <string name="hello_first_fragment">bored?</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Preference common -->
     <string name="title_activity_settings">boring settings</string>
 
-    <!-- Preference headers -->
+    <!-- Preference Type -->
     <string name="type_header">What type of activity do you want to do?</string>
-    <string name="participants_header">How many people should be involved?</string>
-    <string name="accessibility_header">How easy should it be done?</string>
-    <string name="price_header">How much can it cost?</string>
-
-    <!-- Preference titles -->
     <string name="type_title">Select type</string>
-    <string name="participants_title">Input number of people</string>
-    <string name="participants_switch_title">I don\'t care</string>
-    <string name="price_title">Select maximum</string>
-    <string name="price_switch_title">I don\'t care</string>
-    <string name="accessibility_title">How easy should it be done?</string>
-    <string name="accessibility_switch_title">I don\'t care</string>
 
-    <!-- Error messages -->
-    <string name="request_failed">Failed to load activity</string>
+    <!-- Preference Participants -->
+    <string name="participants_header">How many people should be involved?</string>
+    <string name="participants_title">Input number of people</string>
+
+    <!-- Preference Price -->
+    <string name="price_header">How much can it cost?</string>
+    <string name="price_title">Select maximum</string>
+
+    <!-- Preference Accessibility -->
+    <string name="accessibility_header">How easy should it be done?</string>
+    <string name="accessibility_title">How easy should it be done?</string>
+    <string name="accessibility_summary_highest">Bring it on!</string>
+    <string name="accessibility_summary_high">Give me a challenge</string>
+    <string name="accessibility_summary_middle">Something in the middle</string>
+    <string name="accessibility_summary_low">Feeling lazy</string>
+    <string name="accessibility_summary_lowest">I don\'t really want to do anything</string>
+    <string name="price_summary_highest">Money is not an issue</string>
+    <string name="price_summary_high">As long as it is entertaining</string>
+    <string name="price_summary_middle">I don\'t mind spending a little</string>
+    <string name="price_summary_low">Make it cheap</string>
+    <string name="price_summary_lowest">Free</string>
 </resources>
